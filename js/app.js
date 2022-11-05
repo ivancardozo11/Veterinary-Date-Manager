@@ -61,11 +61,34 @@ class UI{
             mascotaParrafo.classList.add('card-title', 'font-weight-bolder');
             mascotaParrafo.textContent = mascota;
             
-            console.log(mascotaParrafo);
-            
+            const propietarioParrafo = document.createElement('p');
+            propietarioParrafo.innerHTML = `
+            <span class="font-weight-bolder">Propietario: </span> ${propietario}`;
 
+            const fechaParrafo = document.createElement('p');
+            fechaParrafo.innerHTML = `
+            <span class="font-weight-bolder">fecha: </span> ${fecha}`;
+
+            const telefonoParrafo = document.createElement('p');
+            telefonoParrafo.innerHTML = `
+            <span class="font-weight-bolder">Telefono: </span> ${telefono}`;
+
+            const horaParrafo = document.createElement('p');
+            horaParrafo.innerHTML = `
+            <span class="font-weight-bolder">hora: </span> ${hora}`;
+
+            const sintomasParrafo = document.createElement('p');
+            sintomasParrafo.innerHTML = `
+            <span class="font-weight-bolder">sintomas: </span> ${sintomas}`;
+
+            
             //Agregar los parrafos al divCita
             divCita.appendChild(mascotaParrafo);
+            divCita.appendChild(propietarioParrafo);
+            divCita.appendChild(telefonoParrafo);
+            divCita.appendChild(fechaParrafo);
+            divCita.appendChild(horaParrafo);
+            divCita.appendChild(sintomasParrafo);
 
             //Agregar las citas al HTML
             contenedorCitas.appendChild(divCita);
