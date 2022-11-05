@@ -13,11 +13,12 @@ const  contenedorCitas = document.querySelector('#citas');
 
 class Citas{
     constructor(){
-        this.citas = [];
+        this.citas = []
     }
 
     agregarCita(cita){
-        this.cita = [...this.citas, cita];
+        this.citas = [...this.citas, cita];
+        console.log(this.citas);
     }
 
 }
@@ -49,8 +50,11 @@ class UI{
         }, 5000);
     }
 
-    imprimirCitas({ cita }){
-        cita.forEach( cita =>{
+    imprimirCitas({ citas } ){
+
+        this.limpiarHTML();
+
+        citas.forEach( cita => {
             const {mascota, propietario, telefono, fecha, hora, sintomas, id }= cita;
             const divCita = document.createElement('div');
             divCita.classList.add('cita', 'p-3');
@@ -95,6 +99,11 @@ class UI{
         })
     }
 
+    limpiarHTML() {
+        while(contenedorCitas.firstChild){
+            contenedorCitas.removeChild(contenedorCitas.firstChild);
+        }
+    }
 }
 
 const ui = new UI();
